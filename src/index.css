@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Properties */
+:root {
+  color-scheme: dark;
+  --glow-color: rgba(255, 255, 255, 0.1);
+  --blur-amount: 10px;
+}
+
+/* Base styles */
+body {
+  @apply bg-black text-white;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+/* Emoji Mart Custom Styles */
+em-emoji-picker {
+  --background-rgb: 0, 0, 0;
+  --border-radius: 0.75rem;
+  --category-icon-size: 20px;
+  --font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --hover-background-rgb: 255, 255, 255;
+  --hover-background-opacity: 0.05;
+  --input-background-rgb: 255, 255, 255;
+  --input-background-opacity: 0.05;
+  --input-border-radius: 0.5rem;
+  --input-font-size: 15px;
+  --input-padding: 12px 16px;
+  --secondary-text-rgb: 153, 153, 153;
+  --text-rgb: 255, 255, 255;
+  height: 450px !important;
+  min-height: 450px !important;
+  max-height: 450px !important;
+  width: 352px !important;
+  min-width: 352px !important;
+  max-width: 352px !important;
+}
+
+em-emoji-picker::part(picker) {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+em-emoji-picker input.search {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  margin: 0 8px !important;
+  width: calc(100% - 16px) !important;
+}
+
+em-emoji-picker .sticky {
+  top: 0 !important;
+  position: sticky !important;
+  background: rgb(var(--background-rgb)) !important;
+  padding: 8px !important;
+  z-index: 10 !important;
+}
+
+/* Input Styles */
+input {
+  @apply bg-black/30 border border-white/10 rounded-xl;
+  @apply text-white placeholder-gray-400;
+  @apply focus:ring-2 focus:ring-white/20 focus:border-transparent;
+  @apply hover:bg-white/5 transition-all duration-200;
+  @apply outline-none relative z-10;
+}
+
+input:focus {
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* Rest of your existing styles... */
